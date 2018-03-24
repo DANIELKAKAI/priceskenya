@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'myapp/styles.css' %}">
+	<title>Scraping</title>
+</head>
+<body>
+	<div class="top">
+	<center>
+	<form name="form" action="search/" method="POST" >{% csrf_token %}
+	<input type = "text" name = "search">
+	<button type="sumbit" value = "search"><strong>Search</strong></button> 
+	</form>
+	</center>
+	</div>
+
+	<div class="shops">
+	<h2>JUMIA</h2>
+	{{jumia_data}}
+</div>
+
+<div class="shops">
+	<h2>KILIMALL</h2>
+	{{kilimall_data}}
+</div>
+
+<div class="shops">
+	<h2>MASOKO</h2>
+	{{masoko_data}}
+</div>
+
+</body>
+</html>
+

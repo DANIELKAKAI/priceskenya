@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="{% static 'finalapp/barstyle.css' %}" type="text/css">
+
+<style>
+
+
+</style>
+</head>
+<body>
+
+
+<ul>
+  <li><a href="#news">PriceCheck</a></li>
+</ul>
+
+<form action="/search" class="search-wrapper cf" method="POST" >{% csrf_token %}
+        {{form}}
+        <button type="submit">Search</button>
+    </form>
+
+<center><p>"Compare Prices <br>Accross Multiple Online Shops"</p></center>
+
+
+</body>
+</html>

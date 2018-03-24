@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>result page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'finalapp/style.css' %}"/>
+    <link rel="{% static 'finalapp/css/font-awesome.min.css' %}" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'finalapp/favicon.png' %}"/>
+</head>
+
+<body>
+<header>
+    <div id="header-inner">
+        <a href="index.html" id="logo"></a>
+        <h2>PriceShop</h2>
+        <nav>
+            <a href="#" id="menu-icon">
+            </a>
+            <ul>
+                <li><a href="index.html" class="current">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!--end header-->
+
+<div class="jumia">
+<h3>JUMIA</h3>
+    <ul class="items">
+      {% for i in jdata %}
+        <li><img class="images" src="{{i.0}}" alt="img"/>
+            <p>{{i.1}}</p>
+            <p>{{i.2}}</p></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="kili">
+<h3>KILIMALL</h3>
+    <ul class="items">
+      {% for i in kdata %}
+        <li><img class="images" src="{{i.0}}" alt="img"/>
+            <p>{{i.1}}</p>
+            <p>{{i.2}}</p></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="masoko">
+<h3>MASOKO</h3>
+    <ul class="items">
+      {% for i in mdata %}
+        <li><img class="images" src="{{i.0}}" alt="img"/>
+            <p>{{i.1}}</p>
+            <p>{{i.2}}</p></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="olx">
+<h3>OLX</h3>
+    <ul class="items">
+
+        <li><img class="images" src="C:/Users/lenovo/Desktop/image.png" alt="img"/>
+            <p>name</p>
+            <p>price</p></li>
+
+    </ul>
+</div>
+
+
+<footer>
+    <ul class="social">
+        <li><a href="facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    </ul>
+</footer>
+
+<footer class="second">
+    <p>&copy: PriceShop</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'myapp/styles.css' %}">
+	<title>Scraping</title>
+</head>
+<body>
+	<div class="top">
+	<center>
+	<form name="form" action="myapp/first/" method="post" >{% csrf_token %}
+	{{ form }}
+	<input type="submit" value = "search"> 
+	</form>
+	</center>
+	</div>
+
+	<div class="shops">
+	<h2>JUMIA</h2>
+	{{jdata}}
+</div>
+
+<div class="shops">
+	<h2>KILIMALL</h2>
+	{{kdata}}
+</div>
+
+<div class="shops">
+	<h2>MASOKO</h2>
+	{{mdata}}
+</div>
+
+<div class="shops">
+	<h2>MASOKO</h2>
+	{{xdata}}
+</div>
+
+</body>
+</html>

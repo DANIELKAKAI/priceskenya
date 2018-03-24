@@ -1,0 +1,142 @@
+@import 'https://fonts.googleapis.com/css?family=Alegreya+Sans';
+
+*{
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+body{
+background:#F5F5F5;
+color:#67727A;
+font-family:'Alegrya',sans-serif;
+margin:0;
+}
+
+h2{
+  font-size:250%;
+  color:#F5F5F5;
+  float:left;
+  font-weight:700;
+  margin: 20px;
+  text-align:center;
+  padding-top 2%;
+}
+
+p{
+  font-size:160%;
+  line-height:150%;
+  padding:3%;
+  text-indent:2%;
+  text-align:justify;
+}
+
+header{
+background-color:#FF3333;
+width:100%;
+height:76px;
+margin-bottom:30px;
+}
+
+#header-inner{
+max-width:1200px;
+margin :0 auto;
+}
+
+#logo {
+margin: 20px;
+float: left;
+width: 200px;
+height:60px;
+background: url('img/RD.png') no-repeat center;
+}
+
+ul {
+list-style-type: none;
+float:left;
+}
+
+nav ul li {
+font-size:150%;
+display: inline-block;
+float: left;
+padding:10px;
+}
+
+nav ul li a{
+   color:#C3D7DF;
+   text-decoration:none;
+}
+
+.items {
+diplay:flex;
+justify-content:space-between;
+align-items: center;
+}
+.items p
+{
+font-size: 80%;
+}
+
+.items li{
+display: inline-block;
+}
+
+.olx {
+
+width:100%;
+clear:both;
+}
+
+.jumia {
+
+width:100%;
+clear:both;
+}
+
+.masoko {
+
+width:100%;
+clear:both;
+}
+
+.kili {
+
+width:70%;
+clear:both;
+center:true;
+}
+
+.images {
+width:130px;
+height:100px;
+}
+
+p {
+font-weight:700;
+}
+
+
+#namanyay-search-btn {
+background:#0099ff;
+color:white;
+font: 'trebuchet ms', trebuchet;
+padding:10px 20px;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+
+#namanyay-search-box {
+background: #eee;
+padding:10px;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:160px;
+ }

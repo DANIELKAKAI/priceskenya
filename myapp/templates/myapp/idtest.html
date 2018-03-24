@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% include 'myapp/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>id test</title>
+
+{%block head%}
+
+ {% endblock%}
+</head>
+<body>
+   {{id}}
+
+<form action="myapp/idtest/test" method="post">{%csrf_token%}
+    <input type="text" name="text"/>
+<input type="submit" value = "search"/>
+</form>
+</body>
+</html>

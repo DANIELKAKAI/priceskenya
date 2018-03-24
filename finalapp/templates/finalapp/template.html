@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+{% load static %}
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<title>PriceCheck</title>
+<style>
+
+html{
+width:100%;
+padding:0px;
+}
+body {
+  text-align: center;
+  padding: 200px;
+  background-image:url("{% static 'finalapp/shop.jpg' %}")
+}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+
+#namanyay-search-btn {
+background:#0099ff;
+color:white;
+font: 'trebuchet ms', trebuchet;
+padding:10px 20px;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+
+#namanyay-search-box {
+background: #eee;
+padding:10px;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+border:0 none;
+width:160px;
+ }
+ </style>
+
+
+
+<!-- Top menu -->
+<div class="w3-top" style="width:100%">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <a href="finalapp/first/"><div class="w3-right w3-padding-16">Home</div></a>
+    <div class="w3-center w3-padding-16">PriceCheck</div>
+  </div>
+</div>
+</head>
+
+
+<body>
+
+<form id="searchthis" action="result/" style="display:inline;" method="post">{% csrf_token %}
+{{form}}
+<input id="namanyay-search-btn" value="Search" type="submit"/>
+</form>
+
+
+</body>
+</html>
