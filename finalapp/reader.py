@@ -60,11 +60,10 @@ def kili_reader(data):
     list = []
     try:
         for i in containers:
-            a = i.find("img")
-            b = i.find("a",class_="lazyload")['title']
+            a = i.find("a",class_="lazyload")
             c = i.find("em").text
             d = i.find("a")
-            list.append([a['data-src'], b, c,d['href']])
+            list.append([a['data-src'], a['title'], c,d['href']])
         return list
     except:
         return emplist
@@ -91,5 +90,27 @@ def pigia_reader(data):
         return emplist
 
 
+
+def ora_reader(data):
+    url_name = "https://orabuy.com/?s="+data+"&post_type=product&product_cat=0"
+    req = Request(url_name, headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req)
+    page_html = webpage.read()
+    webpage.close()
+    soup = BeautifulSoup(page_html, 'lxml')
+    containers = soup.find_all("div", class_="content-product product-inview")
+    list = []
+    try:
+        for i in containers:
+            a = i.find("a")   #image
+            b = i.find("p",class_="product-title").find_next("a").text   #title
+            d = i.find("span",class_="woocommerce-Price-amount amount").text   #price
+            list.append([a['data-images'], b, d,a['href']])
+        if len(list)<4:
+            return list
+        else:
+            return list[:4]
+    except:
+        return emplist
 
 

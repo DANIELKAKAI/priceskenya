@@ -8,6 +8,26 @@
 <link rel="stylesheet" href="{% static 'finalapp/barstyle.css' %}" type="text/css">
 
 <style>
+ .loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid red;
+  border-bottom: 16px solid red;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
 </style>
@@ -16,16 +36,31 @@
 
 
 <ul>
-  <li><a href="#news">PriceCheck</a></li>
+  <li><a href="#news">PricesKenya</a></li>
 </ul>
 
-<form action="/search" class="search-wrapper cf" method="POST" >{% csrf_token %}
+<form action="" class="search-wrapper cf" method="POST" >{% csrf_token %}
         {{form}}
-        <button type="submit">Search</button>
+        <button type="submit" onclick="loader()">Search</button>
     </form>
 
-<center><p>"Compare Prices <br>Accross Multiple Online Shops"</p></center>
+<center><p>"Compare Prices <br>Accross Multiple Online Shops"</p>
+<div id="loading" class="loader" style="display:none">
 
+</div>
+<div id = "load" style="display:none">
+<p>Loading data...</p>
+</div>
+</center>
+<script type="text/javascript">
+          function loader()
+          {
+               div = document.getElementById('loading')
+               div.style.display = "block"
+               div2 = document.getElementById('load')
+               div2.style.display = "block"
+          }
 
+	</script>
 </body>
 </html>
