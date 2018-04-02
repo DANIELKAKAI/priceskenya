@@ -90,26 +90,22 @@ def pigia_reader(data):
         return emplist
 
 
-
-def ora_reader(data):
-    url_name = "https://orabuy.com/?s="+data+"&post_type=product&product_cat=0"
-    req = Request(url_name, headers={'User-Agent': 'Mozilla/5.0'})
+def front_reader(data):
+    url_name = "http://www.frontmall.co.ke/index.php/catalogsearch/result/?q="+data+"&cat="
+    req = Request(url_name, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'})
     webpage = urlopen(req)
     page_html = webpage.read()
     webpage.close()
     soup = BeautifulSoup(page_html, 'lxml')
-    containers = soup.find_all("div", class_="content-product product-inview")
+    containers = soup.find_all("li", class_="col-sm-3 col-md-3 col-sms-12 col-smb-12 item first")+soup.find_all("li", class_="col-sm-3 col-md-3 col-sms-12 col-smb-12 item")
     list = []
     try:
         for i in containers:
-            a = i.find("a")   #image
-            b = i.find("p",class_="product-title").find_next("a").text   #title
-            d = i.find("span",class_="woocommerce-Price-amount amount").text   #price
-            list.append([a['data-images'], b, d,a['href']])
-        if len(list)<4:
-            return list
-        else:
-            return list[:4]
+            a = i.find("a")
+            b = i.find("span",class_="price").text
+            c = i.find("img")
+            list.append([c['src'], a['title'], b,a['href']])
+        return list
     except:
         return emplist
 

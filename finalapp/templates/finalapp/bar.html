@@ -39,7 +39,7 @@
   <li><a href="#news">PricesKenya</a></li>
 </ul>
 
-<form action="" class="search-wrapper cf" method="POST" >{% csrf_token %}
+<form action="/searchresult/" class="search-wrapper cf" method="POST" >{% csrf_token %}
         {{form}}
         <button type="submit" onclick="loader()">Search</button>
     </form>

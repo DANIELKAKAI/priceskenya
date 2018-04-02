@@ -2,12 +2,12 @@ from django.shortcuts import render
 from .forms import TextForm
 from finalapp.reader import *
 
-data = ''
+
 def firstview(request):
     if request.method == "POST":
         form = TextForm(request.POST)
         if form.is_valid():
-            data = form.cleaned_data['name'].replace(" ", "+")
+            data = form.cleaned_data['name'].replace(" ", "+");request.session['item'] = data
             a = jumia_reader(data);
             b = kili_reader(data);
             c = masoko_reader(data);
@@ -19,4 +19,6 @@ def firstview(request):
 
 
 def secondview(request):
-    return render(request, "finalapp/page2.html", {'odata': 'data'})
+    data = request.session.get('item')
+    a = front_reader(data)
+    return render(request, "finalapp/page2.html", {'fdata': a[:4]})
