@@ -22,3 +22,9 @@ def secondview(request):
     data = request.session.get('item')
     a = front_reader(data)
     return render(request, "finalapp/page2.html", {'fdata': a[:4]})
+
+def contacts(request):
+    return render(request,"finalapp/contacts.html",{})
+
+def about(request):
+    return render(request,"finalapp/about.html",{})
