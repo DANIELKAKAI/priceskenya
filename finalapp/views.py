@@ -15,7 +15,7 @@ def firstview(request):
             return render(request, "finalapp/finaldesign.html",{'jdata': a[:4], 'kdata': b[:4], 'mdata': c[:4], 'pdata': d[:4]})
     else:
         form = TextForm()
-        return render(request, 'finalapp/bar.html', {'form': form})
+        return render(request, 'finalapp/bar2.html', {'form': form})
 
 
 def secondview(request):
